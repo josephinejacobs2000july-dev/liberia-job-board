@@ -8,7 +8,7 @@ A free job board for Liberia. **Job seekers** search vacancies by title, county,
 2. The site opens in **preview mode** with example jobs.
 3. To make it real, add a free database. In the Vercel project, open **Storage → Create Database → Neon**, and connect it to this project. Then open **Deployments**, click **⋯** on the latest deployment, and choose **Redeploy**.
 
-That's it. On the first visit, the board creates its own tables, a secret key for logins and a few example vacancies.
+After connecting the database, any new deploy picks it up. On the first visit, the board creates its own tables, a secret key for logins and a few example vacancies.
 
 **Who is the administrator?** The first employer account created on the board becomes the administrator. The administrator can edit or remove any vacancy and remove the example vacancies. So create your own account first.
 
