@@ -9,7 +9,14 @@ type Sql = ReturnType<typeof postgres>;
 
 /** Vercel's Neon integration sets DATABASE_URL; older Vercel Postgres projects set POSTGRES_URL. */
 export function databaseUrl(): string | null {
-  return process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.POSTGRES_PRISMA_URL || null;
+  const named =
+    process.env.DATABASE_URL || process.env.STORAGE_URL || process.env.POSTGRES_URL || process.env.POSTGRES_PRISMA_URL;
+  if (named) return named;
+  // A database connected with a custom name prefix (for example MYDB_URL): use the first PostgreSQL address found.
+  for (const [key, value] of Object.entries(process.env)) {
+    if (key.endsWith("_URL") && !key.includes("UNPOOLED") && value && /^postgres(ql)?:\/\//.test(value)) return value;
+  }
+  return null;
 }
 
 export function hasDatabase(): boolean {
