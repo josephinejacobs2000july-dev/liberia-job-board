@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13285e">
+<title>No internet · Liberia Job Board</title>
+<style>
+  :root { --bg:#f2f4f8; --surface:#fff; --ink:#0f1b33; --ink-2:#4d5b75; --line:#d2d9e5; --band:#13285e; --accent:#1d3a8a; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0c1220; --surface:#141c2e; --ink:#e8edf7; --ink-2:#9da9c2; --line:#2a3550; --band:#0a1a44; --accent:#93acf2; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100dvh; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; display:flex; flex-direction:column; }
+  header { background:var(--band); color:#fff; padding:18px max(16px,env(safe-area-inset-left,0px)); display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; }
+  main { flex:1; display:grid; place-items:center; padding:24px max(16px,env(safe-area-inset-left,0px)); }
+  .card { max-width:420px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px; display:flex; flex-direction:column; gap:12px; }
+  h1 { margin:0; font-size:22px; }
+  p { margin:0; color:var(--ink-2); }
+  button { align-self:flex-start; min-height:44px; padding:0 18px; border-radius:8px; border:0; background:var(--accent); color:#fff; font:inherit; font-weight:600; cursor:pointer; }
+  @media (prefers-color-scheme: dark) { button { color:#0c1220; } }
+</style>
+</head>
+<body>
+<header>
+  <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="8" fill="#c8202f"/><path d="M17 6.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L7 13.7l7.1-.6z" fill="#fff"/></svg>
+  Liberia Job Board
+</header>
+<main>
+  <div class="card">
+    <h1>You're offline</h1>
+    <p>Check your data or Wi-Fi connection, then try again. Pages you opened recently may still work.</p>
+    <button type="button" onclick="location.reload()">Try again</button>
+  </div>
+</main>
+</body>
+</html>

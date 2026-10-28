@@ -2,11 +2,15 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/nav";
+import { InstallApp } from "@/components/pwa";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: "Liberia Job Board", template: "%s · Liberia Job Board" },
   description: "Find jobs across Liberia's 15 counties, or post a vacancy for free.",
+  applicationName: "Liberia Job Board",
+  appleWebApp: { capable: true, title: "LR Jobs", statusBarStyle: "black-translucent" },
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
@@ -30,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <header className="mast">
           <div className="wrap">
+            <div className="mast-top">
             <Link href="/" className="brand">
               <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
                 <rect width="34" height="34" rx="8" fill="#c8202f" />
@@ -40,6 +45,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <span>Vacancies from NGOs, government and businesses across the 15 counties</span>
               </div>
             </Link>
+            <InstallApp />
+            </div>
             <Nav />
           </div>
         </header>
